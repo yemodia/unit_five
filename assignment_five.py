@@ -8,7 +8,7 @@ def user_play():
     return want_play
 
 def random_number():
-    number = random.randint (1,100)
+    number = random.randint(1,100)
     return number
 
 
@@ -16,17 +16,24 @@ def random_number():
 def main():
     while True:
         if user_play() == "y":
-            answer = random_number()
-        user_guess = input("Pick a number between 1 and 100:")
-        if user_guess == random_number():
-            print("You guessed it")
-            break
+            while True:
+                answer = random_number()
+                user_guess = int(input("Pick a number between 1 and 100:"))
+                if user_guess >= 1 and user_guess <= 100:
+
+                    if user_guess > answer:
+                        print("The guess is too high")
+                if user_guess < answer:
+                        print("The guess is too low")
+                if user_guess == answer:
+                        print("You guessed it")
+                        break
 
         else:
             print("Ok, see you later")
 
-            if user_guess <=1  and user_guess <= 100:
-                
+
+
 
 
 main()
