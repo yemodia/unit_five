@@ -1,7 +1,22 @@
+# Yerim Dia
+# October 18, 2018
+# Introduction to Computer Science
+# This program is under the form of a game.
+# It asks the user if they ant to play. If they choose no, the program ends.
+# O=If they choose yes, the program generates a random number and asks the user to guess.
+# According to the number the user inputs, it will display if the guss was too high or too low.
+# Once the user finds the answer, the program will tell them in how many guesses they found it.
+# The program will then ask the user if they want to play again. If they say no, the program will end.
+# And if they say yes, the program will start again with a new number.
+
 import random
 
 
 def user_play():
+    """
+    This function gets input from the user regarding if they want to play or not
+    :return: It returns the user's response
+    """
     while True:
         want_play = input("Do you want to play?")
         if want_play == "y" or want_play == "n":
@@ -10,10 +25,14 @@ def user_play():
 
 
 def random_number():
+    """
+    This function generates a random number tha the user will have to guess
+    :return: It returns the random number to the main function
+    """
     number = random.randint(1, 100)
 
-
     return number
+
 
 def main():
     while True:
